@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Py-Chat</title>
+    <style>
+        /* General Reset */
+        body, h1, label, input, textarea, button, footer {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e1e2f;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Header Styling */
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 150px;
+            background: linear-gradient(90deg, #3a3f58, #2a2d45);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .error{
+            color: #ff2112;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .success{
+            color: #6f6ff5;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Form Container */
+        form {
+            background-color: #2a2d45;
+            border-radius: 10px;
+            padding: 20px 30px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Form Labels */
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #a0a0a0;
+        }
+
+        /* Input Fields */
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            border: 1px solid #44475a;
+            border-radius: 5px;
+            background-color: #1e1e2f;
+            color: #e0e0e0;
+        }
+
+        form input::placeholder, form textarea::placeholder {
+            color: #666;
+        }
+
+        /* Submit Button */
+        form button {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #5d5fef, #6f6ff5);
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        form button:hover {
+            background: linear-gradient(90deg, #6f6ff5, #5d5fef);
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #888;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            form {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Neo-Chat</h1>
+    </header>
+    <form method="POST">
+        <p class="error">{{error}}</p>
+        <p class="success">{{message}}</p>
+        <label for="phone_number">Phone Number: (Enter phone number with country code, eg. +27)</label>
+        <input type="tel" id="phone_number" name="phone_number" required placeholder="Enter phone number">
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required placeholder="Enter your message"></textarea>
+
+        <label for="send_time">Time:</label>
+        <input type="time" id="send_time" name="send_time" required>
+
+        <button type="submit">Schedule Message</button>
+    </form>
+    <footer>
+        &copy; 2024 Neo-Chat. All rights reserved.
+    </footer>
+</body>
+</html>

@@ -30,6 +30,19 @@ I created this application because I needed a simple solution to schedule WhatsA
 
 ---
 
+## How To Run
+1. Install required packages:
+```bash
+pip install -r requirements.txt
+```
+2. Start the server:
+```bash
+python app.py
+```
+
+---
+
+
 ## Requirements
 - A WhatsApp Business API or compatible integration to send messages.
 - An internet connection for the application to function.
